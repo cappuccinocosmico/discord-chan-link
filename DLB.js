@@ -27,8 +27,8 @@ bot.on("guildCreate", (guild, message, channel, fs, decache, lettersChoice) => {
 
 bot.on("guildDelete", guild => {
   let serverCount = bot.guilds.size;
-  console.log(` ${bot.user.username} a quitté le serveur: ${guild.name} (ID: ${guild.id})\n New Linked Channels Count : ` + serverCount + '\n');
-  bot.user.setActivity(`${serverCount} serveurs`, {type: "WATCHING"});
+  console.log(` ${bot.user.username} a quitté le server: ${guild.name} (ID: ${guild.id})\n New Linked Channels Count : ` + serverCount + '\n');
+  bot.user.setActivity(`${serverCount} servers`, {type: "WATCHING"});
 });
 
 bot.on('presenceUpdate', (oldMember, newMember) => {
@@ -133,7 +133,7 @@ if (msgchan.name === undefined)  {
     console.log(MentionMSG);
   }
 
-  // xzdc specifics commands 
+  // xzdc specifics commands
   xzdcUsersList.some(user => {
     if (message.author === user) {
       const xzdcCmds = require("./commands/xzdcCmds.js");
@@ -146,7 +146,7 @@ if (msgchan.name === undefined)  {
       const modoCmds = require("./commands/modoCmds.js")
       const cybermute = require("./commands/cybermute.js");
       const cyberunmute = require("./commands/cyberunmute.js");
-    
+
       modoCmds(message, prefix, bot, linkedChannels, linkedChans, fs, decache)
       cybermute(message, prefix, bot)
       cyberunmute(message, prefix, bot)
@@ -168,7 +168,7 @@ if (msgchan.name === undefined)  {
 
 // MSG provide from a linked channel
 if (msgChanLink) {
-  
+
   if (msg.startsWith(prefix)) {
     const usersCmds = require("./commands/usersCmds.js");
     usersCmds(message, prefix, bot, fs, decache)
@@ -179,7 +179,7 @@ if (msgChanLink) {
   var NotAllowedMentions = ["@here", "@everyone"];
   var DiscordInvUrls = ["http://discord.gg", "https://discord.gg", "http://discord.me", "https://discord.me", "https://discordapp.com/invite", "http://discordapp.com/invite", "http://www.discordservers", "https://www.discordservers"];
   var ytURLs = ["http://youtube", "https://youtube", "http://youtu.be/", "https://youtu.be/", "http://www.youtube", "https://www.youtube", "http://www.youtu.be/", "https://www.youtu.be/"]
-  const restrict_ans = " vous avez saisi des mots clés interdits sur ce salon.\nPar conséquent votre message a ou va être supprimé et n'a pas pas transmis vers les autres serveurs.";
+  const restrict_ans = " vous avez saisi des mots clés interdits sur ce salon.\nPar conséquent votre message a ou va être supprimé et n'a pas pas transmis vers les autres servers.";
   const restrict_ans2 = `:warning: Merci de bien vouloir éviter de tenir ou diffuser ce genre de propo(s) / contenu(s)`;
 
   // Discord Invites Restrictions
@@ -236,8 +236,8 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServA = require(fileServ);
       sendHookServA(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
-  }	
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
+  }
 
 // Discord Server B Channel Link
   if ((!serverB)||(serverB == undefined)) {
@@ -249,8 +249,8 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServB = require(fileServ);
       sendHookServB(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
-  }	
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
+  }
 
 
 // Discord Server C Channel Link
@@ -263,9 +263,9 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServC = require(fileServ);
       sendHookServC(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
   }
-  
+
 // Discord Server A1 Channel Link
   if ((!serverA1)||(serverA1 == undefined)) {
   	var servLetter = 'A1';
@@ -277,7 +277,7 @@ const extension = '.js';
       const sendHookServA1 = require(fileServ);
       sendHookServA1(message, bot)
     } else {
-    	console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
+    	console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
     }
   }
 
@@ -291,7 +291,7 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServB1 = require(fileServ);
       sendHookServB1(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
   }
 
 // Discord Server C1 Channel Link
@@ -304,7 +304,7 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServC1 = require(fileServ);
       sendHookServC1(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
   }
 
 // Discord Server A2 Channel Link
@@ -317,7 +317,7 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServA2 = require(fileServ);
       sendHookServA2(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
   }
 
 // Discord Server B2 Channel Link
@@ -330,7 +330,7 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServB2 = require(fileServ);
       sendHookServB2(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
   }
 
 // Discord Server C2 Channel Link
@@ -343,7 +343,7 @@ const extension = '.js';
     if (fs.existsSync(fileServ)) {
       const sendHookServC2 = require(fileServ);
       sendHookServC2(message, bot)
-    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link serveur ${servLetter}.\n`);
+    } else console.log(` Le bot n'a pas pu trouver le fichier contenant la fonction de de link server ${servLetter}.\n`);
   }
 
 } // else console.log(` ERROR ! THIS MESSAGE DONT PROVIDE FROM A LINKED CHANNEL : ${message.content}`) // end of msgChanLink restriction

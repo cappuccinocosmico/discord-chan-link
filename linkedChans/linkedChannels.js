@@ -19,13 +19,13 @@ function linkedChans_file(bot, channel, fs, lettersChoice) {
 
   	} else {
   	  var server = require(`./server${servLetter}.js`);
-      server(bot)      
+      server(bot)
       console.log(' Server ' + servLetter + ' [LinkedChannel File Configuration] for this server has been found.');
 
   	}
 
   })
-  
+
   linkedChannels = [serverA, serverB, serverC, serverA1, serverB1, serverC1, serverA2, serverB2, serverC2]
   linkedChans = (channel==serverA)||(channel==serverB)||(channel==serverC)||(channel==serverA1)||(channel==serverB1)||(channel==serverC1)||(channel==serverA2)||(channel==serverB2)||(channel==serverC2);
   console.log('\n')
